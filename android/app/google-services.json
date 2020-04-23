@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "103602470466",
+    "firebase_url": "https://food-e-pie.firebaseio.com",
+    "project_id": "food-e-pie",
+    "storage_bucket": "food-e-pie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103602470466:android:585508b0e89145550ef7db",
+        "android_client_info": {
+          "package_name": "com.example.foodepie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103602470466-7ncrmnaeqco5t9jikkmo1ncqpbblvh8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_XLv6zfBBWU-MnVqf3MQF0vsD623P7L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103602470466-7ncrmnaeqco5t9jikkmo1ncqpbblvh8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
