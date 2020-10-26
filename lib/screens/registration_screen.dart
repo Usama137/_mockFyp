@@ -18,8 +18,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
   String email;
   String password;
+  String name;
+  String phone;
   bool _isSelectedDiabetic = false;
   bool _isSelectedBp = false;
+  bool _isSelectedVege=false;
+  bool _isSelectedChine=false;
+  bool _isSelectedChiken=false;
+  bool _isSelectedMutton=false;
+  bool _isSelectedBeef=false;
+  String otherInterest;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +50,28 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                SizedBox(
+                  height: 8.0,
+                ),
+                Text(
+                  'Basic Information',style: TextStyle(
+                  fontSize: 27.0,
+                  color: Color(0xff080040),
+                ),
+                ),
+                //for full name
+                TrackingTextInput(
+                  label: "Full Name",
+                  hint: "What's your full name?",
+                  colour: Color(0xff080040),
+                  onTextChanged: (String value) {
+                    name= value;
+                  },
+                ),
+                SizedBox(
+                  height: 8.0,
+                ),
                 //for email
-
                 TrackingTextInput(
                   label: "Email",
                   hint: "What's your email address?",
@@ -66,9 +94,94 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
 
                 SizedBox(
+                  height: 8.0,
+                ),
+                TrackingTextInput(
+                  label: "Phone",
+                  hint: "Enter your phone number. ",
+                  colour: Color(0xff080040),
+                  onTextChanged: (String value) {
+                    phone = value;
+                  },
+                ),
+
+                SizedBox(
+                  height: 24.0,
+                ),
+                Text(
+                  'Interest',style: TextStyle(
+                  fontSize: 27.0,
+                  color: Color(0xff080040),
+                ),
+                ),
+                LabeledCheckbox(
+                  label: 'Do you like vegetables?',
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  value: _isSelectedVege,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      _isSelectedVege = newValue;
+                    });
+                  },
+                ),
+                LabeledCheckbox(
+                  label: 'Do you like Chinese?',
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  value: _isSelectedChine,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      _isSelectedChine = newValue;
+                    });
+                  },
+                ),
+                LabeledCheckbox(
+                  label: 'Do you like Chiken?',
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  value: _isSelectedChiken,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      _isSelectedChiken = newValue;
+                    });
+                  },
+                ),
+                LabeledCheckbox(
+                  label: 'Do you like Mutton?',
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  value: _isSelectedMutton,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      _isSelectedMutton = newValue;
+                    });
+                  },
+                ),
+                LabeledCheckbox(
+                  label: 'Do you like Beef?',
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  value: _isSelectedBeef,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      _isSelectedBeef = newValue;
+                    });
+                  },
+                ),
+                TrackingTextInput(
+                  label: "Other interest",
+                  hint: "Do you have any other interest(italian etc)?",
+                  colour: Color(0xff080040),
+                  onTextChanged: (String value) {
+                    otherInterest= value;
+                  },
+                ),
+                SizedBox(
                   height: 24.0,
                 ),
 
+                Text(
+                  'Disease',style: TextStyle(
+                  fontSize: 27.0,
+                  color: Color(0xff080040),
+                ),
+                ),
                 LabeledCheckbox(
                   label: 'Are you Diabetic patient?',
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -88,6 +201,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     setState(() {
                       _isSelectedBp = newValue;
                     });
+                  },
+                ),
+                TrackingTextInput(
+                  label: "Other Disease",
+                  hint: "If you have any other disease, please mention.",
+                  colour: Color(0xff080040),
+                  onTextChanged: (String value) {
+                    otherInterest= value;
                   },
                 ),
                 RoundedButton(
